@@ -66,7 +66,7 @@
 
 
 
-  <meta name="keywords" content="Hexo, NexT" />
+  <meta name="keywords" content="javascript,ES6," />
 
 
 
@@ -77,17 +77,18 @@
 
 
 
-<meta name="description" content="走在前端工程師的路上">
-<meta property="og:type" content="website">
-<meta property="og:title" content="Tags">
-<meta property="og:url" content="http://yoursite.com/tags/index.html">
+<meta name="description" content="前言Promise 是 ES6 當中用來解決 christmas callback hell 的一種非同步的處理方式。 Promise 的三種狀態 Pending: 初始狀態 Fulfill: 成功完成 Result: 失敗   Promise 的狀態都是從 pending 開始，一旦 Promise 的狀態被確定(fulfill or result)，就不會再改變。">
+<meta name="keywords" content="javascript,ES6">
+<meta property="og:type" content="article">
+<meta property="og:title" content="ES6 - Promise (1)">
+<meta property="og:url" content="http://yoursite.com/2018/04/11/es6-promise/index.html">
 <meta property="og:site_name" content="to be continued...">
-<meta property="og:description" content="走在前端工程師的路上">
+<meta property="og:description" content="前言Promise 是 ES6 當中用來解決 christmas callback hell 的一種非同步的處理方式。 Promise 的三種狀態 Pending: 初始狀態 Fulfill: 成功完成 Result: 失敗   Promise 的狀態都是從 pending 開始，一旦 Promise 的狀態被確定(fulfill or result)，就不會再改變。">
 <meta property="og:locale" content="zh-tw">
-<meta property="og:updated_time" content="2018-03-28T15:34:44.931Z">
+<meta property="og:updated_time" content="2018-04-11T02:19:35.424Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="Tags">
-<meta name="twitter:description" content="走在前端工程師的路上">
+<meta name="twitter:title" content="ES6 - Promise (1)">
+<meta name="twitter:description" content="前言Promise 是 ES6 當中用來解決 christmas callback hell 的一種非同步的處理方式。 Promise 的三種狀態 Pending: 初始狀態 Fulfill: 成功完成 Result: 失敗   Promise 的狀態都是從 pending 開始，一旦 Promise 的狀態被確定(fulfill or result)，就不會再改變。">
 
 
 
@@ -117,13 +118,13 @@
 
 
 
-  <link rel="canonical" href="http://yoursite.com/tags/"/>
+  <link rel="canonical" href="http://yoursite.com/2018/04/11/es6-promise/"/>
 
 
 
 
 
-  <title>Tags | to be continued...</title>
+  <title>ES6 - Promise (1) | to be continued...</title>
   
 
 
@@ -281,40 +282,212 @@
 
   <div id="posts" class="posts-expand">
     
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/04/11/es6-promise/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="HAHA YANG">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/avatar.gif">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="to be continued...">
+    </span>
+
     
-    
-    <div class="post-block page">
       <header class="post-header">
 
-	<h1 class="post-title" itemprop="name headline">Tags</h1>
-
-
-
-</header>
-
-      
-      
-      
-      <div class="post-body">
         
         
-          <div class="tag-cloud">
-            <div class="tag-cloud-title">
-                目前共計 7 個標籤
-            </div>
-            <div class="tag-cloud-tags">
-              <a href="/tags/ES6/" style="font-size: 12px; color: #ccc">ES6</a> <a href="/tags/javascript/" style="font-size: 30px; color: #111">javascript</a> <a href="/tags/node-js/" style="font-size: 12px; color: #ccc">node.js</a>
-            </div>
-          </div>
+          <h1 class="post-title" itemprop="name headline">ES6 - Promise (1)</h1>
         
-      </div>
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">發表於</span>
+              
+              <time title="創建於" itemprop="dateCreated datePublished" datetime="2018-04-11T10:16:17+08:00">
+                2018-04-11
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+            <span class="post-category" >
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分類於</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/ES6/" itemprop="url" rel="index">
+                    <span itemprop="name">ES6</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+              <span class="post-comments-count">
+                <span class="post-meta-divider">|</span>
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-comment-o"></i>
+                </span>
+                <a href="/2018/04/11/es6-promise/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count disqus-comment-count"
+                        data-disqus-identifier="2018/04/11/es6-promise/" itemprop="commentCount"></span>
+                </a>
+              </span>
+            
+          
+
+          
+          
+
+          
+            <span class="post-meta-divider">|</span>
+            <span class="page-pv"><i class="fa fa-file-o"></i>
+            <span class="busuanzi-value" id="busuanzi_value_page_pv" ></span>
+            </span>
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
       
       
+
+      
+        <h2 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h2><p>Promise 是 ES6 當中用來解決 christmas callback hell 的一種非同步的處理方式。</p>
+<h2 id="Promise-的三種狀態"><a href="#Promise-的三種狀態" class="headerlink" title="Promise 的三種狀態"></a>Promise 的三種狀態</h2><ul>
+<li>Pending: 初始狀態</li>
+<li>Fulfill: 成功完成</li>
+<li>Result: 失敗</li>
+</ul>
+<blockquote>
+<p>Promise 的狀態都是從 pending 開始，一旦 Promise 的狀態被確定(fulfill or result)，就不會再改變。</p>
+</blockquote>
+<a id="more"></a>
+<h2 id="Promise-Constructor"><a href="#Promise-Constructor" class="headerlink" title="Promise Constructor"></a>Promise Constructor</h2><ul>
+<li>要記得處理 error 的部分</li>
+</ul>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">let</span> myPromise = <span class="keyword">new</span> <span class="built_in">Promise</span>(<span class="function">(<span class="params">resolve, reject</span>) =&gt;</span> &#123;</span><br><span class="line">    setTimeout(<span class="function"><span class="params">()</span> =&gt;</span> &#123;</span><br><span class="line">        resolve(<span class="string">'Good to go!'</span>);</span><br><span class="line">    &#125;, <span class="number">1000</span>);</span><br><span class="line"></span><br><span class="line">    setTimeout(<span class="function"><span class="params">()</span> =&gt;</span> &#123;</span><br><span class="line">        reject(<span class="string">'uh oh!'</span>);</span><br><span class="line">    &#125;,<span class="number">500</span>)</span><br><span class="line">&#125;);</span><br><span class="line"></span><br><span class="line">myPromise.then(<span class="function">(<span class="params">res</span>) =&gt;</span> &#123;</span><br><span class="line">    <span class="built_in">console</span>.log(res); </span><br><span class="line">&#125;, (err) =&gt; &#123;</span><br><span class="line">    <span class="built_in">console</span>.log(err); <span class="comment">// uh oh!</span></span><br><span class="line">&#125;)</span><br><span class="line"></span><br><span class="line"><span class="comment">// 或者使用 catch 處理 error</span></span><br><span class="line">myPromise</span><br><span class="line">    .then(<span class="function">(<span class="params">res</span>) =&gt;</span> &#123;</span><br><span class="line">        <span class="built_in">console</span>.log(res); </span><br><span class="line">    &#125;)</span><br><span class="line">    .catch(<span class="function">(<span class="params">err</span>) =&gt;</span> &#123;</span><br><span class="line">        <span class="built_in">console</span>.log(err);</span><br><span class="line">    &#125;)</span><br></pre></td></tr></table></figure>
+<h2 id="Promise-all-iterable"><a href="#Promise-all-iterable" class="headerlink" title="Promise.all([iterable])"></a>Promise.all([iterable])</h2><ul>
+<li>等傳入的所有 Promise都跑完，會回傳一個新的 Promise。</li>
+<li>只要有其中一個 Promise reject 就會執行 ㄒ<code>err</code>。</li>
+</ul>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">let</span> myPromise = <span class="keyword">new</span> <span class="built_in">Promise</span>(<span class="function">(<span class="params">resolve, reject</span>) =&gt;</span> &#123;</span><br><span class="line">    setTimeout(<span class="function"><span class="params">()</span> =&gt;</span> &#123;</span><br><span class="line">        resolve(<span class="string">'Good to go!'</span>);</span><br><span class="line">    &#125;, <span class="number">1000</span>);</span><br><span class="line">&#125;);</span><br><span class="line"></span><br><span class="line"><span class="keyword">let</span> myPromise2 = <span class="keyword">new</span> <span class="built_in">Promise</span>(<span class="function">(<span class="params">resolve, reject</span>) =&gt;</span> &#123;</span><br><span class="line">    setTimeout(<span class="function"><span class="params">()</span> =&gt;</span> &#123;</span><br><span class="line">        resolve(<span class="string">'Promise 2 - the promising'</span>);</span><br><span class="line">    &#125;, <span class="number">1500</span>);</span><br><span class="line">&#125;);</span><br><span class="line"></span><br><span class="line"><span class="built_in">Promise</span>.all([myPromise, myPromise2])</span><br><span class="line">    .then(<span class="function">(<span class="params">data</span>) =&gt;</span> &#123;</span><br><span class="line">        <span class="built_in">console</span>.log(data);  <span class="comment">// ["Good to go!", "Promise 2 - the promising"]</span></span><br><span class="line">    &#125;)</span><br><span class="line">    .catch(<span class="function">(<span class="params">err</span>) =&gt;</span> &#123;</span><br><span class="line">        <span class="built_in">console</span>.log(err);</span><br><span class="line">    &#125;)</span><br></pre></td></tr></table></figure>
+<h2 id="Promise-race-iterable"><a href="#Promise-race-iterable" class="headerlink" title="Promise.race([iterable])"></a>Promise.race([iterable])</h2><ul>
+<li>和 <code>Promise.all()</code> 非常相像，不同點在於，他僅會回傳第一個完成的 Promise。(不論第一個完成的是 resolve 或 reject)</li>
+</ul>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">Promise</span>.race([myPromise, myPromise2])</span><br><span class="line">    .then(<span class="function">(<span class="params">data</span>) =&gt;</span> &#123;</span><br><span class="line">        <span class="built_in">console</span>.log(data); <span class="comment">// 'Good to go!'</span></span><br><span class="line">    &#125;)</span><br><span class="line">    .catch(<span class="function">(<span class="params">err</span>) =&gt;</span> &#123;</span><br><span class="line">        <span class="built_in">console</span>.log(err);</span><br><span class="line">    &#125;)</span><br></pre></td></tr></table></figure>
+<h2 id="fetch"><a href="#fetch" class="headerlink" title="fetch "></a>fetch </h2><ul>
+<li>使用 fetch 做異步請求，會回傳一個 Promise。</li>
+</ul>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">fetch(<span class="string">'http://api.icndb.com/jokes/random/10'</span>)</span><br><span class="line">    .then(<span class="function">(<span class="params">res</span>) =&gt;</span> &#123;</span><br><span class="line">        <span class="comment">// res.json()  會回傳另外一個 Promise，回傳一個 json 格式的資料</span></span><br><span class="line">        res.json().then(<span class="function">(<span class="params">data</span>) =&gt;</span> &#123;</span><br><span class="line">            <span class="built_in">console</span>.log(data);</span><br><span class="line">        &#125;)</span><br><span class="line">    &#125;)</span><br><span class="line">    .catch(<span class="function">(<span class="params">err</span>) =&gt;</span> &#123;</span><br><span class="line">        <span class="built_in">console</span>.log(err);</span><br><span class="line">    &#125;)</span><br></pre></td></tr></table></figure>
+<h3 id="小結"><a href="#小結" class="headerlink" title="小結"></a>小結</h3><p>第一次接觸到 Promise 的時候，頭上都是問號。多看了好幾篇教學文之後才終於稍微比較瞭解。接下來會再找時間了解 Promise 的其他可以使用的方法，以及研究 async 和 await 如何做到 flow control。</p>
+<h2 id="參考資料"><a href="#參考資料" class="headerlink" title="參考資料"></a>參考資料</h2><p><a href="https://www.youtube.com/watch?v=vQ3MoXnKfuQ" target="_blank" rel="noopener">Let’s Learn ES6 - Promises</a><br><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Promise" target="_blank" rel="noopener">Promise MDN</a></p>
+
       
     </div>
     
     
     
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+        <div class="post-tags">
+          
+            <a href="/tags/javascript/" rel="tag"><i class="fa fa-tag"></i> javascript</a>
+          
+            <a href="/tags/ES6/" rel="tag"><i class="fa fa-tag"></i> ES6</a>
+          
+        </div>
+      
+
+      
+      
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/2018/04/03/node-path-module/" rel="next" title="Node.js path module">
+                <i class="fa fa-chevron-left"></i> Node.js path module
+              </a>
+            
+          </div>
+
+          <span class="post-nav-divider"></span>
+
+          <div class="post-nav-prev post-nav-item">
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+
+    <div class="post-spread">
+      
+    </div>
   </div>
 
 
@@ -323,6 +496,20 @@
 
 
           
+
+  
+    <div class="comments" id="comments">
+      <div id="disqus_thread">
+        <noscript>
+          Please enable JavaScript to view the
+          <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a>
+        </noscript>
+      </div>
+    </div>
+
+  
+
+
 
         </div>
         
@@ -343,8 +530,17 @@
       
 
       
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
+            文章目錄
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview-wrap">
+            本站概覽
+          </li>
+        </ul>
+      
 
-      <section class="site-overview-wrap sidebar-panel sidebar-panel-active">
+      <section class="site-overview-wrap sidebar-panel">
         <div class="site-overview">
           <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
             
@@ -426,6 +622,22 @@
         </div>
       </section>
 
+      
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#前言"><span class="nav-number">1.</span> <span class="nav-text">前言</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Promise-的三種狀態"><span class="nav-number">2.</span> <span class="nav-text">Promise 的三種狀態</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Promise-Constructor"><span class="nav-number">3.</span> <span class="nav-text">Promise Constructor</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Promise-all-iterable"><span class="nav-number">4.</span> <span class="nav-text">Promise.all([iterable])</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Promise-race-iterable"><span class="nav-number">5.</span> <span class="nav-text">Promise.race([iterable])</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#fetch"><span class="nav-number">6.</span> <span class="nav-text">fetch </span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#小結"><span class="nav-number">6.1.</span> <span class="nav-text">小結</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#參考資料"><span class="nav-number">7.</span> <span class="nav-text">參考資料</span></a></li></ol></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
       
 
       
@@ -607,6 +819,18 @@
       <script id="dsq-count-scr" src="https://haha.disqus.com/count.js" async></script>
     
 
+    
+      <script type="text/javascript">
+        var disqus_config = function () {
+          this.page.url = 'http://yoursite.com/2018/04/11/es6-promise/';
+          this.page.identifier = '2018/04/11/es6-promise/';
+          this.page.title = 'ES6 - Promise (1)';
+        };
+        var d = document, s = d.createElement('script');
+        s.src = 'https://haha.disqus.com/embed.js';
+        s.setAttribute('data-timestamp', '' + +new Date());
+        (d.head || d.body).appendChild(s);
+      </script>
     
 
   
