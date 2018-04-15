@@ -66,7 +66,7 @@
 
 
 
-  <meta name="keywords" content="Hexo, NexT" />
+  <meta name="keywords" content="javascript," />
 
 
 
@@ -77,16 +77,22 @@
 
 
 
-<meta name="description" content="走在前端工程師的路上">
-<meta property="og:type" content="website">
-<meta property="og:title" content="to be continued...">
-<meta property="og:url" content="http://yoursite.com/categories/Javascript/index.html">
+<meta name="description" content="部分 window 物件屬性，及 Element 的 position 相關屬性整理。">
+<meta name="keywords" content="javascript">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Window 物件和 Element 相關定位">
+<meta property="og:url" content="http://yoursite.com/2018/04/15/window-obj/index.html">
 <meta property="og:site_name" content="to be continued...">
-<meta property="og:description" content="走在前端工程師的路上">
+<meta property="og:description" content="部分 window 物件屬性，及 Element 的 position 相關屬性整理。">
 <meta property="og:locale" content="zh-tw">
+<meta property="og:image" content="https://developer.mozilla.org/@api/deki/files/213/=FirefoxInnerVsOuterHeight2.png">
+<meta property="og:image" content="https://developer.mozilla.org/@api/deki/files/186/=Dimensions-offset.png">
+<meta property="og:image" content="https://developer.mozilla.org/@api/deki/files/185/=Dimensions-client.png">
+<meta property="og:updated_time" content="2018-04-15T16:23:34.625Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="to be continued...">
-<meta name="twitter:description" content="走在前端工程師的路上">
+<meta name="twitter:title" content="Window 物件和 Element 相關定位">
+<meta name="twitter:description" content="部分 window 物件屬性，及 Element 的 position 相關屬性整理。">
+<meta name="twitter:image" content="https://developer.mozilla.org/@api/deki/files/213/=FirefoxInnerVsOuterHeight2.png">
 
 
 
@@ -116,13 +122,13 @@
 
 
 
-  <link rel="canonical" href="http://yoursite.com/categories/Javascript/"/>
+  <link rel="canonical" href="http://yoursite.com/2018/04/15/window-obj/"/>
 
 
 
 
 
-  <title>分類: Javascript | to be continued...</title>
+  <title>Window 物件和 Element 相關定位 | to be continued...</title>
   
 
 
@@ -150,7 +156,7 @@
     
   
 
-  <div class="container sidebar-position-left ">
+  <div class="container sidebar-position-left page-post-detail">
     <div class="headband"></div>
 
     <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
@@ -278,111 +284,332 @@
           <div id="content" class="content">
             
 
+  <div id="posts" class="posts-expand">
+    
+
+  
+
   
   
   
-  <div class="post-block category">
-
-    <div id="posts" class="posts-collapse">
-      <div class="collection-title">
-        <h1>Javascript<small>分類</small>
-        </h1>
-      </div>
-
-      
-        
 
   <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-    <header class="post-header">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/04/15/window-obj/">
 
-      <h2 class="post-title">
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="HAHA YANG">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/avatar.gif">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="to be continued...">
+    </span>
+
+    
+      <header class="post-header">
+
         
-            <a class="post-title-link" href="/2018/04/15/window-obj/" itemprop="url">
-              
-                <span itemprop="name">Window 物件和 Element 相關定位</span>
-              
-            </a>
         
-      </h2>
+          <h1 class="post-title" itemprop="name headline">Window 物件和 Element 相關定位</h1>
+        
 
-      <div class="post-meta">
-        <time class="post-time" itemprop="dateCreated"
-              datetime="2018-04-15T23:21:13+08:00"
-              content="2018-04-15" >
-          04-15
-        </time>
-      </div>
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">發表於</span>
+              
+              <time title="創建於" itemprop="dateCreated datePublished" datetime="2018-04-15T23:21:13+08:00">
+                2018-04-15
+              </time>
+            
 
-    </header>
-  </article>
+            
 
+            
+          </span>
+
+          
+            <span class="post-category" >
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分類於</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/Javascript/" itemprop="url" rel="index">
+                    <span itemprop="name">Javascript</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+              <span class="post-comments-count">
+                <span class="post-meta-divider">|</span>
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-comment-o"></i>
+                </span>
+                <a href="/2018/04/15/window-obj/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count disqus-comment-count"
+                        data-disqus-identifier="2018/04/15/window-obj/" itemprop="commentCount"></span>
+                </a>
+              </span>
+            
+          
+
+          
+          
+
+          
+            <span class="post-meta-divider">|</span>
+            <span class="page-pv"><i class="fa fa-file-o"></i>
+            <span class="busuanzi-value" id="busuanzi_value_page_pv" ></span>
+            </span>
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
 
       
-        
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-    <header class="post-header">
-
-      <h2 class="post-title">
-        
-            <a class="post-title-link" href="/2018/04/12/different-for-loop/" itemprop="url">
-              
-                <span itemprop="name">foreach, for...of, and for...in</span>
-              
-            </a>
-        
-      </h2>
-
-      <div class="post-meta">
-        <time class="post-time" itemprop="dateCreated"
-              datetime="2018-04-12T16:35:26+08:00"
-              content="2018-04-12" >
-          04-12
-        </time>
-      </div>
-
-    </header>
-  </article>
-
+      
 
       
-        
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-    <header class="post-header">
-
-      <h2 class="post-title">
-        
-            <a class="post-title-link" href="/2018/04/03/node-path-module/" itemprop="url">
-              
-                <span itemprop="name">Node.js path module</span>
-              
-            </a>
-        
-      </h2>
-
-      <div class="post-meta">
-        <time class="post-time" itemprop="dateCreated"
-              datetime="2018-04-03T14:40:29+08:00"
-              content="2018-04-03" >
-          04-03
-        </time>
-      </div>
-
-    </header>
-  </article>
-
+        <p>部分 window 物件屬性，及 Element 的 position 相關屬性整理。<br><a id="more"></a></p>
+<h2 id="window-物件"><a href="#window-物件" class="headerlink" title="window 物件"></a>window 物件</h2><table>
+<thead>
+<tr>
+<th>特性</th>
+<th>說明</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>window.innerHeight</td>
+<td>視窗的高度 (不包括 chrome 瀏覽器/ 使用者操作介面部分 )</td>
+</tr>
+<tr>
+<td>window.innerWidth</td>
+<td>視窗的寬度 (不包括 chrome 瀏覽器/ 使用者操作介面部分 )</td>
+</tr>
+<tr>
+<td>window.outerHeight</td>
+<td>視窗的高度 (包括 chrome 瀏覽器/ 使用者操作介面部分 )</td>
+</tr>
+<tr>
+<td>window.innerWidth</td>
+<td>視窗的寬度 (包括 chrome 瀏覽器/ 使用者操作介面部分 )</td>
+</tr>
+<tr>
+<td>window.pageXOffset</td>
+<td>網頁文件水平捲動的距離 ( 和 window.scrollX  是一樣的，需跨瀏覽器時建議使用 pageXOffset)</td>
+</tr>
+<tr>
+<td>window.pageYOffset</td>
+<td>網頁文件垂直捲動的距離 ( 和 window.scrollY  是一樣的，需跨瀏覽器時建議使用 pageYOffset)</td>
+</tr>
+<tr>
+<td>window.screenX</td>
+<td>滑鼠的 X 座標，相對於螢幕的左上角</td>
+</tr>
+<tr>
+<td>window.screenY</td>
+<td>滑鼠的 Y 座標，相對於螢幕的左上角</td>
+</tr>
+<tr>
+<td>window.location</td>
+<td>window 物件目前的頁面 URL (或本機路徑)</td>
+</tr>
+<tr>
+<td>window.document</td>
+<td>參考至 document 物件，用以代表目前的頁面內容</td>
+</tr>
+<tr>
+<td>window.history</td>
+<td>參考至 history 物件，用以擷取瀏覽器視窗或頁籤所包含的瀏覽紀錄資訊</td>
+</tr>
+<tr>
+<td>window.history.length</td>
+<td>history 物件中的瀏覽紀錄筆數</td>
+</tr>
+<tr>
+<td>window.screen</td>
+<td>screen 物件</td>
+</tr>
+</tbody>
+</table>
+<h3 id="window-innerHeight-vs-window-outerHeight"><a href="#window-innerHeight-vs-window-outerHeight" class="headerlink" title="window.innerHeight vs window.outerHeight"></a>window.innerHeight vs window.outerHeight</h3><p><img src="https://developer.mozilla.org/@api/deki/files/213/=FirefoxInnerVsOuterHeight2.png" alt=""><br>圖片來源: <a href="https://developer.mozilla.org/en-US/docs/Web/API/Window/outerHeight" target="_blank" rel="noopener">https://developer.mozilla.org/en-US/docs/Web/API/Window/outerHeight</a></p>
+<h2 id="screen-物件"><a href="#screen-物件" class="headerlink" title="screen 物件"></a>screen 物件</h2><table>
+<thead>
+<tr>
+<th>特性</th>
+<th>說明</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>screen.width</td>
+<td>使用者的螢幕寬度</td>
+</tr>
+<tr>
+<td>screen.height</td>
+<td>使用者的螢幕高度</td>
+</tr>
+<tr>
+<td>screen.availWidth</td>
+<td>使用者的螢幕寬度剪掉系統的控制列</td>
+</tr>
+<tr>
+<td>screen.availHeight</td>
+<td>使用者的螢幕寬度剪掉系統的控制列</td>
+</tr>
+<tr>
+<td>screen.colorDepth</td>
+<td>the number of bits used to display one color</td>
+</tr>
+<tr>
+<td>screen.pixelDepth</td>
+<td>the pixel depth of the screen</td>
+</tr>
+</tbody>
+</table>
+<p>ps. For modern computers, Color Depth and Pixel Depth are equal.</p>
+<h2 id="Element-在頁面中的位置"><a href="#Element-在頁面中的位置" class="headerlink" title="Element 在頁面中的位置"></a>Element 在頁面中的位置</h2><table>
+<thead>
+<tr>
+<th>特性</th>
+<th>說明</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>HTMLElement.offsetParent</td>
+<td>回傳目前元件計算 offset 的祖先元件</td>
+</tr>
+<tr>
+<td>HTMLElement.offsetTop</td>
+<td>距離最近的祖先節點頂端的距離</td>
+</tr>
+<tr>
+<td>HTMLElement.offsetLeft</td>
+<td>距離最近的祖先節點左邊的距離</td>
+</tr>
+<tr>
+<td>HTMLElement.offsetHeight</td>
+<td>元素高度 (包括垂直 padding 和 border，若該元素有水平 scrollbar 也會算進去)</td>
+</tr>
+<tr>
+<td>HTMLElement.offsetWidth</td>
+<td>元素寬度 (包括垂直 padding 和 border，若該元素有垂直 scrollbar 也會算進去。)</td>
+</tr>
+<tr>
+<td>Element.clientHeight</td>
+<td>元素寬度，包括padding (不包括垂直 border 和 margin，若該元素有垂直 scrollbar 不會算進去。)</td>
+</tr>
+<tr>
+<td>Element.clientWidth</td>
+<td>元素寬度，包括padding (不包括水平 border 和 margin，若該元素有垂直 scrollbar 不會算進去。)</td>
+</tr>
+</tbody>
+</table>
+<ul>
+<li><p>offsetHeight &amp; offsetWidth<br>圖片來源: <a href="https://developer.mozilla.org/@api/deki/files/186/=Dimensions-offset.png" target="_blank" rel="noopener">https://developer.mozilla.org/@api/deki/files/186/=Dimensions-offset.png</a><br><img src="https://developer.mozilla.org/@api/deki/files/186/=Dimensions-offset.png" alt=""></p>
+</li>
+<li><p>clientHeight &amp; clientWidth<br>圖片來源: <a href="https://developer.mozilla.org/en-US/docs/Web/API/Element/clientWidth" target="_blank" rel="noopener">https://developer.mozilla.org/en-US/docs/Web/API/Element/clientWidth</a><br><img src="https://developer.mozilla.org/@api/deki/files/185/=Dimensions-client.png" alt=""></p>
+</li>
+</ul>
+<h2 id="參考資料"><a href="#參考資料" class="headerlink" title="參考資料"></a>參考資料</h2><ul>
+<li>Javascript &amp; JQuery 網站互動設計程式進化之道</li>
+<li><a href="https://www.w3schools.com/js/js_window_screen.asp" target="_blank" rel="noopener">JavaScript Window Screen</a> </li>
+<li><a href="https://developer.mozilla.org/en-US/docs/Web/API/Window/outerHeight" target="_blank" rel="noopener">Window.outerHeight</a></li>
+</ul>
 
       
     </div>
+    
+    
+    
 
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+        <div class="post-tags">
+          
+            <a href="/tags/javascript/" rel="tag"><i class="fa fa-tag"></i> javascript</a>
+          
+        </div>
+      
+
+      
+      
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/2018/04/12/different-for-loop/" rel="next" title="foreach, for...of, and for...in">
+                <i class="fa fa-chevron-left"></i> foreach, for...of, and for...in
+              </a>
+            
+          </div>
+
+          <span class="post-nav-divider"></span>
+
+          <div class="post-nav-prev post-nav-item">
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
   </div>
   
   
   
+  </article>
 
-  
 
+
+    <div class="post-spread">
+      
+    </div>
+  </div>
 
 
           </div>
@@ -390,6 +617,20 @@
 
 
           
+
+  
+    <div class="comments" id="comments">
+      <div id="disqus_thread">
+        <noscript>
+          Please enable JavaScript to view the
+          <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a>
+        </noscript>
+      </div>
+    </div>
+
+  
+
+
 
         </div>
         
@@ -410,8 +651,17 @@
       
 
       
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
+            文章目錄
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview-wrap">
+            本站概覽
+          </li>
+        </ul>
+      
 
-      <section class="site-overview-wrap sidebar-panel sidebar-panel-active">
+      <section class="site-overview-wrap sidebar-panel">
         <div class="site-overview">
           <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
             
@@ -493,6 +743,22 @@
         </div>
       </section>
 
+      
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#window-物件"><span class="nav-number">1.</span> <span class="nav-text">window 物件</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#window-innerHeight-vs-window-outerHeight"><span class="nav-number">1.1.</span> <span class="nav-text">window.innerHeight vs window.outerHeight</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#screen-物件"><span class="nav-number">2.</span> <span class="nav-text">screen 物件</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Element-在頁面中的位置"><span class="nav-number">3.</span> <span class="nav-text">Element 在頁面中的位置</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#參考資料"><span class="nav-number">4.</span> <span class="nav-text">參考資料</span></a></li></ol></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
       
 
       
@@ -653,6 +919,10 @@
 
 
   
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.1.4"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=5.1.4"></script>
+
+
 
   
 
@@ -670,6 +940,18 @@
       <script id="dsq-count-scr" src="https://haha.disqus.com/count.js" async></script>
     
 
+    
+      <script type="text/javascript">
+        var disqus_config = function () {
+          this.page.url = 'http://yoursite.com/2018/04/15/window-obj/';
+          this.page.identifier = '2018/04/15/window-obj/';
+          this.page.title = 'Window 物件和 Element 相關定位';
+        };
+        var d = document, s = d.createElement('script');
+        s.src = 'https://haha.disqus.com/embed.js';
+        s.setAttribute('data-timestamp', '' + +new Date());
+        (d.head || d.body).appendChild(s);
+      </script>
     
 
   
