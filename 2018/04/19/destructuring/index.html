@@ -66,7 +66,7 @@
 
 
 
-  <meta name="keywords" content="javascript,ES6," />
+  <meta name="keywords" content="ES6,Javascript," />
 
 
 
@@ -77,18 +77,18 @@
 
 
 
-<meta name="description" content="前言Promise 是 ES6 當中用來解決 christmas callback hell 的一種非同步的處理方式。 Promise 的三種狀態 Pending: 初始狀態 Fulfill: 成功完成 Result: 失敗   Promise 的狀態都是從 pending 開始，一旦 Promise 的狀態被確定(fulfill or result)，就不會再改變。">
-<meta name="keywords" content="javascript,ES6">
+<meta name="description" content="在弄清楚它是什麼之前，不知道它到底可以幹嘛用。弄清楚之後才恍然大悟，原來它真的蠻好用！ 基礎用法123456789101112131415161718var a, b, rest;[a, b] = [10, 20];console.log(a); // 10console.log(b); // 20[a, b, ...rest] = [10, 20, 30, 40, 50];console.log">
+<meta name="keywords" content="ES6,Javascript">
 <meta property="og:type" content="article">
-<meta property="og:title" content="ES6 - Promise (1)">
-<meta property="og:url" content="http://yoursite.com/2018/04/11/es6-promise/index.html">
+<meta property="og:title" content="Destructuring 的用法">
+<meta property="og:url" content="http://yoursite.com/2018/04/19/destructuring/index.html">
 <meta property="og:site_name" content="to be continued...">
-<meta property="og:description" content="前言Promise 是 ES6 當中用來解決 christmas callback hell 的一種非同步的處理方式。 Promise 的三種狀態 Pending: 初始狀態 Fulfill: 成功完成 Result: 失敗   Promise 的狀態都是從 pending 開始，一旦 Promise 的狀態被確定(fulfill or result)，就不會再改變。">
+<meta property="og:description" content="在弄清楚它是什麼之前，不知道它到底可以幹嘛用。弄清楚之後才恍然大悟，原來它真的蠻好用！ 基礎用法123456789101112131415161718var a, b, rest;[a, b] = [10, 20];console.log(a); // 10console.log(b); // 20[a, b, ...rest] = [10, 20, 30, 40, 50];console.log">
 <meta property="og:locale" content="zh-tw">
-<meta property="og:updated_time" content="2018-04-12T09:15:41.376Z">
+<meta property="og:updated_time" content="2018-04-19T07:39:47.651Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="ES6 - Promise (1)">
-<meta name="twitter:description" content="前言Promise 是 ES6 當中用來解決 christmas callback hell 的一種非同步的處理方式。 Promise 的三種狀態 Pending: 初始狀態 Fulfill: 成功完成 Result: 失敗   Promise 的狀態都是從 pending 開始，一旦 Promise 的狀態被確定(fulfill or result)，就不會再改變。">
+<meta name="twitter:title" content="Destructuring 的用法">
+<meta name="twitter:description" content="在弄清楚它是什麼之前，不知道它到底可以幹嘛用。弄清楚之後才恍然大悟，原來它真的蠻好用！ 基礎用法123456789101112131415161718var a, b, rest;[a, b] = [10, 20];console.log(a); // 10console.log(b); // 20[a, b, ...rest] = [10, 20, 30, 40, 50];console.log">
 
 
 
@@ -118,13 +118,13 @@
 
 
 
-  <link rel="canonical" href="http://yoursite.com/2018/04/11/es6-promise/"/>
+  <link rel="canonical" href="http://yoursite.com/2018/04/19/destructuring/"/>
 
 
 
 
 
-  <title>ES6 - Promise (1) | to be continued...</title>
+  <title>Destructuring 的用法 | to be continued...</title>
   
 
 
@@ -294,7 +294,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/04/11/es6-promise/">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/04/19/destructuring/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="HAHA YANG">
@@ -311,7 +311,7 @@
 
         
         
-          <h1 class="post-title" itemprop="name headline">ES6 - Promise (1)</h1>
+          <h1 class="post-title" itemprop="name headline">Destructuring 的用法</h1>
         
 
         <div class="post-meta">
@@ -323,8 +323,8 @@
               
                 <span class="post-meta-item-text">發表於</span>
               
-              <time title="創建於" itemprop="dateCreated datePublished" datetime="2018-04-11T10:16:17+08:00">
-                2018-04-11
+              <time title="創建於" itemprop="dateCreated datePublished" datetime="2018-04-19T15:32:08+08:00">
+                2018-04-19
               </time>
             
 
@@ -364,9 +364,9 @@
                 <span class="post-meta-item-icon">
                   <i class="fa fa-comment-o"></i>
                 </span>
-                <a href="/2018/04/11/es6-promise/#comments" itemprop="discussionUrl">
+                <a href="/2018/04/19/destructuring/#comments" itemprop="discussionUrl">
                   <span class="post-comments-count disqus-comment-count"
-                        data-disqus-identifier="2018/04/11/es6-promise/" itemprop="commentCount"></span>
+                        data-disqus-identifier="2018/04/19/destructuring/" itemprop="commentCount"></span>
                 </a>
               </span>
             
@@ -399,35 +399,44 @@
       
 
       
-        <h2 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h2><p>Promise 是 ES6 當中用來解決 christmas callback hell 的一種非同步的處理方式。</p>
-<h2 id="Promise-的三種狀態"><a href="#Promise-的三種狀態" class="headerlink" title="Promise 的三種狀態"></a>Promise 的三種狀態</h2><ul>
-<li>Pending: 初始狀態</li>
-<li>Fulfill: 成功完成</li>
-<li>Result: 失敗</li>
-</ul>
-<blockquote>
-<p>Promise 的狀態都是從 pending 開始，一旦 Promise 的狀態被確定(fulfill or result)，就不會再改變。</p>
-</blockquote>
+        <p>在弄清楚它是什麼之前，不知道它到底可以幹嘛用。<br>弄清楚之後才恍然大悟，原來它真的蠻好用！</p>
+<h2 id="基礎用法"><a href="#基礎用法" class="headerlink" title="基礎用法"></a>基礎用法</h2><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> a, b, rest;</span><br><span class="line">[a, b] = [<span class="number">10</span>, <span class="number">20</span>];</span><br><span class="line"><span class="built_in">console</span>.log(a); <span class="comment">// 10</span></span><br><span class="line"><span class="built_in">console</span>.log(b); <span class="comment">// 20</span></span><br><span class="line"></span><br><span class="line">[a, b, ...rest] = [<span class="number">10</span>, <span class="number">20</span>, <span class="number">30</span>, <span class="number">40</span>, <span class="number">50</span>];</span><br><span class="line"><span class="built_in">console</span>.log(a); <span class="comment">// 10</span></span><br><span class="line"><span class="built_in">console</span>.log(b); <span class="comment">// 20</span></span><br><span class="line"><span class="built_in">console</span>.log(rest); <span class="comment">// [30, 40, 50]</span></span><br><span class="line"></span><br><span class="line">(&#123; a, b &#125; = &#123; <span class="attr">a</span>: <span class="number">10</span>, <span class="attr">b</span>: <span class="number">20</span> &#125;);</span><br><span class="line"><span class="built_in">console</span>.log(a); <span class="comment">// 10</span></span><br><span class="line"><span class="built_in">console</span>.log(b); <span class="comment">// 20</span></span><br><span class="line"></span><br><span class="line">(&#123;a, b, ...rest&#125; = &#123;<span class="attr">a</span>: <span class="number">10</span>, <span class="attr">b</span>: <span class="number">20</span>, <span class="attr">c</span>: <span class="number">30</span>, <span class="attr">d</span>: <span class="number">40</span>&#125;);</span><br><span class="line"><span class="built_in">console</span>.log(a); <span class="comment">// 10</span></span><br><span class="line"><span class="built_in">console</span>.log(b); <span class="comment">// 20</span></span><br><span class="line"><span class="built_in">console</span>.log(rest); <span class="comment">//&#123;c: 30, d: 40&#125;</span></span><br></pre></td></tr></table></figure>
 <a id="more"></a>
-<h2 id="Promise-Constructor"><a href="#Promise-Constructor" class="headerlink" title="Promise Constructor"></a>Promise Constructor</h2><ul>
-<li>要記得處理 error 的部分</li>
+<p>解構賦值可以用在 array 和 object 上。也可以混著使用，後面會說到。<br>透過解構賦值可以簡單的宣告變數，不用再一個一個的去宣告。</p>
+<h2 id="陣列的解構賦值"><a href="#陣列的解構賦值" class="headerlink" title="陣列的解構賦值"></a>陣列的解構賦值</h2><ul>
+<li>可以賦予預設值。</li>
+<li>可以對調變數值。</li>
 </ul>
-<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">let</span> myPromise = <span class="keyword">new</span> <span class="built_in">Promise</span>(<span class="function">(<span class="params">resolve, reject</span>) =&gt;</span> &#123;</span><br><span class="line">    setTimeout(<span class="function"><span class="params">()</span> =&gt;</span> &#123;</span><br><span class="line">        resolve(<span class="string">'Good to go!'</span>);</span><br><span class="line">    &#125;, <span class="number">1000</span>);</span><br><span class="line"></span><br><span class="line">    setTimeout(<span class="function"><span class="params">()</span> =&gt;</span> &#123;</span><br><span class="line">        reject(<span class="string">'uh oh!'</span>);</span><br><span class="line">    &#125;,<span class="number">500</span>)</span><br><span class="line">&#125;);</span><br><span class="line"></span><br><span class="line">myPromise.then(<span class="function">(<span class="params">res</span>) =&gt;</span> &#123;</span><br><span class="line">    <span class="built_in">console</span>.log(res); </span><br><span class="line">&#125;, (err) =&gt; &#123;</span><br><span class="line">    <span class="built_in">console</span>.log(err); <span class="comment">// uh oh!</span></span><br><span class="line">&#125;)</span><br><span class="line"></span><br><span class="line"><span class="comment">// 或者使用 catch 處理 error</span></span><br><span class="line">myPromise</span><br><span class="line">    .then(<span class="function">(<span class="params">res</span>) =&gt;</span> &#123;</span><br><span class="line">        <span class="built_in">console</span>.log(res); </span><br><span class="line">    &#125;)</span><br><span class="line">    .catch(<span class="function">(<span class="params">err</span>) =&gt;</span> &#123;</span><br><span class="line">        <span class="built_in">console</span>.log(err);</span><br><span class="line">    &#125;)</span><br></pre></td></tr></table></figure>
-<h2 id="Promise-all-iterable"><a href="#Promise-all-iterable" class="headerlink" title="Promise.all([iterable])"></a>Promise.all([iterable])</h2><ul>
-<li>等傳入的所有 Promise都跑完，會回傳一個新的 Promise。</li>
-<li>只要有其中一個 Promise reject 就會執行 ㄒ<code>err</code>。</li>
+<h3 id="忽略部分的值"><a href="#忽略部分的值" class="headerlink" title="忽略部分的值"></a>忽略部分的值</h3><ul>
+<li>使用 <code>,</code> 和空白做分隔，就可以忽略不需要的值。</li>
 </ul>
-<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">let</span> myPromise = <span class="keyword">new</span> <span class="built_in">Promise</span>(<span class="function">(<span class="params">resolve, reject</span>) =&gt;</span> &#123;</span><br><span class="line">    setTimeout(<span class="function"><span class="params">()</span> =&gt;</span> &#123;</span><br><span class="line">        resolve(<span class="string">'Good to go!'</span>);</span><br><span class="line">    &#125;, <span class="number">1000</span>);</span><br><span class="line">&#125;);</span><br><span class="line"></span><br><span class="line"><span class="keyword">let</span> myPromise2 = <span class="keyword">new</span> <span class="built_in">Promise</span>(<span class="function">(<span class="params">resolve, reject</span>) =&gt;</span> &#123;</span><br><span class="line">    setTimeout(<span class="function"><span class="params">()</span> =&gt;</span> &#123;</span><br><span class="line">        resolve(<span class="string">'Promise 2 - the promising'</span>);</span><br><span class="line">    &#125;, <span class="number">1500</span>);</span><br><span class="line">&#125;);</span><br><span class="line"></span><br><span class="line"><span class="built_in">Promise</span>.all([myPromise, myPromise2])</span><br><span class="line">    .then(<span class="function">(<span class="params">data</span>) =&gt;</span> &#123;</span><br><span class="line">        <span class="built_in">console</span>.log(data);  <span class="comment">// ["Good to go!", "Promise 2 - the promising"]</span></span><br><span class="line">    &#125;)</span><br><span class="line">    .catch(<span class="function">(<span class="params">err</span>) =&gt;</span> &#123;</span><br><span class="line">        <span class="built_in">console</span>.log(err);</span><br><span class="line">    &#125;)</span><br></pre></td></tr></table></figure>
-<h2 id="Promise-race-iterable"><a href="#Promise-race-iterable" class="headerlink" title="Promise.race([iterable])"></a>Promise.race([iterable])</h2><ul>
-<li>和 <code>Promise.all()</code> 非常相像，不同點在於，他僅會回傳第一個完成的 Promise。(不論第一個完成的是 resolve 或 reject)</li>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">f</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line">  <span class="keyword">return</span> [<span class="number">1</span>, <span class="number">2</span>, <span class="number">3</span>];</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="keyword">var</span> [a, , b] = f();</span><br><span class="line"><span class="built_in">console</span>.log(a); <span class="comment">// 1</span></span><br><span class="line"><span class="built_in">console</span>.log(b); <span class="comment">// 3</span></span><br></pre></td></tr></table></figure>
+<h3 id="Rest-的使用"><a href="#Rest-的使用" class="headerlink" title="Rest 的使用"></a>Rest 的使用</h3><ul>
+<li>使用 <code>...</code> 可以擷取剩下的值。</li>
+<li>要特別注意，它只能使用在最後一個變數。</li>
 </ul>
-<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">Promise</span>.race([myPromise, myPromise2])</span><br><span class="line">    .then(<span class="function">(<span class="params">data</span>) =&gt;</span> &#123;</span><br><span class="line">        <span class="built_in">console</span>.log(data); <span class="comment">// 'Good to go!'</span></span><br><span class="line">    &#125;)</span><br><span class="line">    .catch(<span class="function">(<span class="params">err</span>) =&gt;</span> &#123;</span><br><span class="line">        <span class="built_in">console</span>.log(err);</span><br><span class="line">    &#125;)</span><br></pre></td></tr></table></figure>
-<h2 id="fetch"><a href="#fetch" class="headerlink" title="fetch"></a>fetch</h2><ul>
-<li>使用 fetch 做異步請求，會回傳一個 Promise。</li>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> [a, ...b] = [<span class="number">1</span>, <span class="number">2</span>, <span class="number">3</span>];</span><br><span class="line"><span class="built_in">console</span>.log(a); <span class="comment">// 1</span></span><br><span class="line"><span class="built_in">console</span>.log(b); <span class="comment">// [2, 3]</span></span><br></pre></td></tr></table></figure>
+<p>如果 rest 不是最後一個變數，會跳錯誤。<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> [a, ...b,] = [<span class="number">1</span>, <span class="number">2</span>, <span class="number">3</span>];</span><br><span class="line"><span class="comment">// SyntaxError: rest element may not have a trailing comma</span></span><br></pre></td></tr></table></figure></p>
+<h2 id="物件的解購賦值"><a href="#物件的解購賦值" class="headerlink" title="物件的解購賦值"></a>物件的解購賦值</h2><ul>
+<li>基本上和陣列的解構賦值是相同的。</li>
+<li>可以重新命名變數名稱，也可以給予變數預設值。</li>
+<li><p>需要注意，object destructuring 若是在事先宣告的情況下，需要有 <code>( )</code> 將它包覆起來。    </p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> a, b;</span><br><span class="line">(&#123;a, b&#125; = &#123;<span class="attr">a</span>: <span class="number">1</span>, <span class="attr">b</span>: <span class="number">2</span>&#125;);</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>物件的 rest 用法</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">let</span> &#123;a, b, ...rest&#125; = &#123;<span class="attr">a</span>: <span class="number">10</span>, <span class="attr">b</span>: <span class="number">20</span>, <span class="attr">c</span>: <span class="number">30</span>, <span class="attr">d</span>: <span class="number">40</span>&#125;</span><br><span class="line">a; <span class="comment">// 10 </span></span><br><span class="line">b; <span class="comment">// 20 </span></span><br><span class="line">rest; <span class="comment">// &#123; c: 30, d: 40 &#125;</span></span><br></pre></td></tr></table></figure>
+</li>
 </ul>
-<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">fetch(<span class="string">'http://api.icndb.com/jokes/random/10'</span>)</span><br><span class="line">    .then(<span class="function">(<span class="params">res</span>) =&gt;</span> &#123;</span><br><span class="line">        <span class="comment">// res.json()  會回傳另外一個 Promise，回傳一個 json 格式的資料</span></span><br><span class="line">        res.json().then(<span class="function">(<span class="params">data</span>) =&gt;</span> &#123;</span><br><span class="line">            <span class="built_in">console</span>.log(data);</span><br><span class="line">        &#125;)</span><br><span class="line">    &#125;)</span><br><span class="line">    .catch(<span class="function">(<span class="params">err</span>) =&gt;</span> &#123;</span><br><span class="line">        <span class="built_in">console</span>.log(err);</span><br><span class="line">    &#125;)</span><br></pre></td></tr></table></figure>
-<h3 id="小結"><a href="#小結" class="headerlink" title="小結"></a>小結</h3><p>第一次接觸到 Promise 的時候，頭上都是問號。多看了好幾篇教學文之後才終於稍微比較瞭解。接下來會再找時間了解 Promise 的其他可以使用的方法，以及研究 async 和 await 如何做到 flow control。</p>
-<h2 id="參考資料"><a href="#參考資料" class="headerlink" title="參考資料"></a>參考資料</h2><p><a href="https://www.youtube.com/watch?v=vQ3MoXnKfuQ" target="_blank" rel="noopener">Let’s Learn ES6 - Promises</a><br><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Promise" target="_blank" rel="noopener">Promise MDN</a></p>
+<h2 id="巢狀的物件和陣列解構-（Nested-object-and-array-destructuring）"><a href="#巢狀的物件和陣列解構-（Nested-object-and-array-destructuring）" class="headerlink" title="巢狀的物件和陣列解構 （Nested object and array destructuring）"></a>巢狀的物件和陣列解構 （Nested object and array destructuring）</h2><h3 id="With-Object"><a href="#With-Object" class="headerlink" title="With Object"></a>With Object</h3><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">makeItem</span>(<span class="params"></span>)</span>&#123;</span><br><span class="line">    <span class="keyword">return</span> &#123;</span><br><span class="line">        data: &#123;</span><br><span class="line">            item: &#123;</span><br><span class="line">                name: <span class="string">'Shoes'</span>,</span><br><span class="line">                size: &#123;</span><br><span class="line">                    US: <span class="number">10</span>,</span><br><span class="line">                    EU: <span class="number">44</span></span><br><span class="line">                &#125;</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;,</span><br><span class="line">        status: <span class="string">'live'</span>;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">const</span> res = makeItem()</span><br><span class="line"><span class="keyword">const</span> &#123;data, status&#125; = res; </span><br><span class="line"><span class="built_in">console</span>.log(data, status);  <span class="comment">// data 會是 item 物件; status: 'live'</span></span><br><span class="line"></span><br><span class="line"><span class="comment">// data 這個變數是不存在的，它只是用來取得 item 的路徑</span></span><br><span class="line"><span class="keyword">const</span> &#123;<span class="attr">data</span>: &#123;item&#125;&#125; = res; </span><br><span class="line"></span><br><span class="line"><span class="comment">// 可以繼續解構下去。同時也可以更改變數名稱</span></span><br><span class="line"><span class="keyword">const</span> &#123;<span class="attr">data</span>: &#123;<span class="attr">item</span>: &#123;name, <span class="attr">size</span>:&#123; <span class="attr">US</span>: weird, <span class="attr">EU</span>: normal&#125;&#125;&#125;&#125; = res;</span><br></pre></td></tr></table></figure>
+<h3 id="With-Array-amp-Object"><a href="#With-Array-amp-Object" class="headerlink" title="With Array &amp; Object"></a>With Array &amp; Object</h3><ul>
+<li>陣列和物件的解構賦值可以混合使用。</li>
+</ul>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">makeArryItems</span>(<span class="params"></span>)</span>&#123;</span><br><span class="line">    <span class="keyword">return</span> &#123;</span><br><span class="line">        data: &#123;</span><br><span class="line">            items: [</span><br><span class="line">                &#123;<span class="attr">name</span>: <span class="string">'Shoes'</span>, <span class="attr">price</span>: <span class="number">100</span>&#125;,</span><br><span class="line">                &#123;<span class="attr">name</span>: <span class="string">'Size'</span>, <span class="attr">price</span>: <span class="number">250</span>&#125;</span><br><span class="line">            ]</span><br><span class="line">        &#125;,</span><br><span class="line">        status: <span class="string">'live'</span></span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">const</span>  res = makeArryItems();</span><br><span class="line"><span class="keyword">const</span> &#123;<span class="attr">data</span>:&#123;<span class="attr">items</span>: [item1, item2]&#125;&#125; = res;</span><br><span class="line"></span><br><span class="line"><span class="keyword">const</span> &#123;<span class="attr">data</span>:&#123;<span class="attr">items</span>: [&#123;<span class="attr">name</span>:name1, <span class="attr">price</span>:price1&#125;,&#123;<span class="attr">name</span>:name2, <span class="attr">price</span>:price2&#125;]&#125;&#125; = res;</span><br></pre></td></tr></table></figure>
+<h2 id="在迭代使用解構賦值-For-of-iteration-and-destructuring"><a href="#在迭代使用解構賦值-For-of-iteration-and-destructuring" class="headerlink" title="在迭代使用解構賦值 (For of iteration and destructuring)"></a>在迭代使用解構賦值 (For of iteration and destructuring)</h2><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> people = [</span><br><span class="line">  &#123;</span><br><span class="line">    name: <span class="string">'Mike Smith'</span>,</span><br><span class="line">    family: &#123;</span><br><span class="line">      mother: <span class="string">'Jane Smith'</span>,</span><br><span class="line">      father: <span class="string">'Harry Smith'</span>,</span><br><span class="line">      sister: <span class="string">'Samantha Smith'</span></span><br><span class="line">    &#125;,</span><br><span class="line">    age: <span class="number">35</span></span><br><span class="line">  &#125;,</span><br><span class="line">  &#123;</span><br><span class="line">    name: <span class="string">'Tom Jones'</span>,</span><br><span class="line">    family: &#123;</span><br><span class="line">      mother: <span class="string">'Norah Jones'</span>,</span><br><span class="line">      father: <span class="string">'Richard Jones'</span>,</span><br><span class="line">      brother: <span class="string">'Howard Jones'</span></span><br><span class="line">    &#125;,</span><br><span class="line">    age: <span class="number">25</span></span><br><span class="line">  &#125;</span><br><span class="line">];</span><br><span class="line"></span><br><span class="line"><span class="keyword">for</span> (<span class="keyword">var</span> &#123;<span class="attr">name</span>: n, <span class="attr">family</span>: &#123;<span class="attr">father</span>: f&#125;&#125; <span class="keyword">of</span> people) &#123;</span><br><span class="line">  <span class="built_in">console</span>.log(<span class="string">'Name: '</span> + n + <span class="string">', Father: '</span> + f);</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment">// "Name: Mike Smith, Father: Harry Smith"</span></span><br><span class="line"><span class="comment">// "Name: Tom Jones, Father: Richard Jones"</span></span><br></pre></td></tr></table></figure>
+<h2 id="在-function-parameter-中使用"><a href="#在-function-parameter-中使用" class="headerlink" title="在 function parameter 中使用"></a>在 function parameter 中使用</h2><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">userId</span>(<span class="params">&#123;id&#125;</span>) </span>&#123;</span><br><span class="line">  <span class="keyword">return</span> id;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">whois</span>(<span class="params">&#123;displayName, fullName: &#123;firstName: name&#125;&#125;</span>) </span>&#123;</span><br><span class="line">  <span class="built_in">console</span>.log(displayName + <span class="string">' is '</span> + name);</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="keyword">var</span> user = &#123; </span><br><span class="line">  id: <span class="number">42</span>, </span><br><span class="line">  displayName: <span class="string">'jdoe'</span>,</span><br><span class="line">  fullName: &#123; </span><br><span class="line">      firstName: <span class="string">'John'</span>,</span><br><span class="line">      lastName: <span class="string">'Doe'</span></span><br><span class="line">  &#125;</span><br><span class="line">&#125;;</span><br><span class="line"></span><br><span class="line"><span class="built_in">console</span>.log(<span class="string">'userId: '</span> + userId(user)); <span class="comment">// "userId: 42"</span></span><br><span class="line">whois(user); <span class="comment">// "jdoe is John"</span></span><br></pre></td></tr></table></figure>
+<h2 id="參考資料"><a href="#參考資料" class="headerlink" title="參考資料"></a>參考資料</h2><p><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Operators/Destructuring_assignment" target="_blank" rel="noopener">destructuring MDN</a><br><a href="https://www.youtube.com/watch?v=_ApRMRGI-6g&amp;t=8s" target="_blank" rel="noopener">Nested Object Destructuring works</a></p>
 
       
     </div>
@@ -445,9 +454,9 @@
       
         <div class="post-tags">
           
-            <a href="/tags/javascript/" rel="tag"><i class="fa fa-tag"></i> javascript</a>
-          
             <a href="/tags/ES6/" rel="tag"><i class="fa fa-tag"></i> ES6</a>
+          
+            <a href="/tags/Javascript/" rel="tag"><i class="fa fa-tag"></i> Javascript</a>
           
         </div>
       
@@ -460,8 +469,8 @@
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/2018/04/03/node-path-module/" rel="next" title="Node.js path module">
-                <i class="fa fa-chevron-left"></i> Node.js path module
+              <a href="/2018/04/15/window-obj/" rel="next" title="Window 物件和 Element 相關定位">
+                <i class="fa fa-chevron-left"></i> Window 物件和 Element 相關定位
               </a>
             
           </div>
@@ -469,10 +478,6 @@
           <span class="post-nav-divider"></span>
 
           <div class="post-nav-prev post-nav-item">
-            
-              <a href="/2018/04/12/different-for-loop/" rel="prev" title="foreach, for...of, and for...in">
-                foreach, for...of, and for...in <i class="fa fa-chevron-right"></i>
-              </a>
             
           </div>
         </div>
@@ -636,7 +641,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#前言"><span class="nav-number">1.</span> <span class="nav-text">前言</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Promise-的三種狀態"><span class="nav-number">2.</span> <span class="nav-text">Promise 的三種狀態</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Promise-Constructor"><span class="nav-number">3.</span> <span class="nav-text">Promise Constructor</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Promise-all-iterable"><span class="nav-number">4.</span> <span class="nav-text">Promise.all([iterable])</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Promise-race-iterable"><span class="nav-number">5.</span> <span class="nav-text">Promise.race([iterable])</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#fetch"><span class="nav-number">6.</span> <span class="nav-text">fetch</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#小結"><span class="nav-number">6.1.</span> <span class="nav-text">小結</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#參考資料"><span class="nav-number">7.</span> <span class="nav-text">參考資料</span></a></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#基礎用法"><span class="nav-number">1.</span> <span class="nav-text">基礎用法</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#陣列的解構賦值"><span class="nav-number">2.</span> <span class="nav-text">陣列的解構賦值</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#忽略部分的值"><span class="nav-number">2.1.</span> <span class="nav-text">忽略部分的值</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Rest-的使用"><span class="nav-number">2.2.</span> <span class="nav-text">Rest 的使用</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#物件的解購賦值"><span class="nav-number">3.</span> <span class="nav-text">物件的解購賦值</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#巢狀的物件和陣列解構-（Nested-object-and-array-destructuring）"><span class="nav-number">4.</span> <span class="nav-text">巢狀的物件和陣列解構 （Nested object and array destructuring）</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#With-Object"><span class="nav-number">4.1.</span> <span class="nav-text">With Object</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#With-Array-amp-Object"><span class="nav-number">4.2.</span> <span class="nav-text">With Array &amp; Object</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#在迭代使用解構賦值-For-of-iteration-and-destructuring"><span class="nav-number">5.</span> <span class="nav-text">在迭代使用解構賦值 (For of iteration and destructuring)</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#在-function-parameter-中使用"><span class="nav-number">6.</span> <span class="nav-text">在 function parameter 中使用</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#參考資料"><span class="nav-number">7.</span> <span class="nav-text">參考資料</span></a></li></ol></div>
             
 
           </div>
@@ -826,9 +831,9 @@
     
       <script type="text/javascript">
         var disqus_config = function () {
-          this.page.url = 'http://yoursite.com/2018/04/11/es6-promise/';
-          this.page.identifier = '2018/04/11/es6-promise/';
-          this.page.title = 'ES6 - Promise (1)';
+          this.page.url = 'http://yoursite.com/2018/04/19/destructuring/';
+          this.page.identifier = '2018/04/19/destructuring/';
+          this.page.title = 'Destructuring 的用法';
         };
         var d = document, s = d.createElement('script');
         s.src = 'https://haha.disqus.com/embed.js';
