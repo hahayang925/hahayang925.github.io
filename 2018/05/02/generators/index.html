@@ -77,22 +77,18 @@
 
 
 
-<meta name="description" content="部分 window 物件屬性，及 Element 的 position 相關屬性整理。">
+<meta name="description" content="接續上一篇的 iterator，來看看 generators 到底是什麼？ Generator function (function*)123function* name([param[, param[, ... param]]]) &amp;#123;   statements&amp;#125;">
 <meta name="keywords" content="javascript">
 <meta property="og:type" content="article">
-<meta property="og:title" content="Window 物件和 Element 相關定位">
-<meta property="og:url" content="http://yoursite.com/2018/04/15/window-obj/index.html">
+<meta property="og:title" content="generators">
+<meta property="og:url" content="http://yoursite.com/2018/05/02/generators/index.html">
 <meta property="og:site_name" content="to be continued...">
-<meta property="og:description" content="部分 window 物件屬性，及 Element 的 position 相關屬性整理。">
+<meta property="og:description" content="接續上一篇的 iterator，來看看 generators 到底是什麼？ Generator function (function*)123function* name([param[, param[, ... param]]]) &amp;#123;   statements&amp;#125;">
 <meta property="og:locale" content="zh-tw">
-<meta property="og:image" content="https://developer.mozilla.org/@api/deki/files/213/=FirefoxInnerVsOuterHeight2.png">
-<meta property="og:image" content="https://developer.mozilla.org/@api/deki/files/186/=Dimensions-offset.png">
-<meta property="og:image" content="https://developer.mozilla.org/@api/deki/files/185/=Dimensions-client.png">
-<meta property="og:updated_time" content="2018-04-15T16:23:34.625Z">
+<meta property="og:updated_time" content="2018-05-01T16:27:07.750Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="Window 物件和 Element 相關定位">
-<meta name="twitter:description" content="部分 window 物件屬性，及 Element 的 position 相關屬性整理。">
-<meta name="twitter:image" content="https://developer.mozilla.org/@api/deki/files/213/=FirefoxInnerVsOuterHeight2.png">
+<meta name="twitter:title" content="generators">
+<meta name="twitter:description" content="接續上一篇的 iterator，來看看 generators 到底是什麼？ Generator function (function*)123function* name([param[, param[, ... param]]]) &amp;#123;   statements&amp;#125;">
 
 
 
@@ -122,13 +118,13 @@
 
 
 
-  <link rel="canonical" href="http://yoursite.com/2018/04/15/window-obj/"/>
+  <link rel="canonical" href="http://yoursite.com/2018/05/02/generators/"/>
 
 
 
 
 
-  <title>Window 物件和 Element 相關定位 | to be continued...</title>
+  <title>generators | to be continued...</title>
   
 
 
@@ -298,7 +294,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/04/15/window-obj/">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/05/02/generators/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="HAHA YANG">
@@ -315,7 +311,7 @@
 
         
         
-          <h1 class="post-title" itemprop="name headline">Window 物件和 Element 相關定位</h1>
+          <h1 class="post-title" itemprop="name headline">generators</h1>
         
 
         <div class="post-meta">
@@ -327,8 +323,8 @@
               
                 <span class="post-meta-item-text">發表於</span>
               
-              <time title="創建於" itemprop="dateCreated datePublished" datetime="2018-04-15T23:21:13+08:00">
-                2018-04-15
+              <time title="創建於" itemprop="dateCreated datePublished" datetime="2018-05-02T00:18:31+08:00">
+                2018-05-02
               </time>
             
 
@@ -350,8 +346,8 @@
               
               
                 <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/Javascript/" itemprop="url" rel="index">
-                    <span itemprop="name">Javascript</span>
+                  <a href="/categories/javascript/" itemprop="url" rel="index">
+                    <span itemprop="name">javascript</span>
                   </a>
                 </span>
 
@@ -368,9 +364,9 @@
                 <span class="post-meta-item-icon">
                   <i class="fa fa-comment-o"></i>
                 </span>
-                <a href="/2018/04/15/window-obj/#comments" itemprop="discussionUrl">
+                <a href="/2018/05/02/generators/#comments" itemprop="discussionUrl">
                   <span class="post-comments-count disqus-comment-count"
-                        data-disqus-identifier="2018/04/15/window-obj/" itemprop="commentCount"></span>
+                        data-disqus-identifier="2018/05/02/generators/" itemprop="commentCount"></span>
                 </a>
               </span>
             
@@ -403,153 +399,40 @@
       
 
       
-        <p>部分 window 物件屬性，及 Element 的 position 相關屬性整理。<br><a id="more"></a></p>
-<h2 id="window-物件"><a href="#window-物件" class="headerlink" title="window 物件"></a>window 物件</h2><table>
-<thead>
-<tr>
-<th>特性</th>
-<th>說明</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>window.innerHeight</td>
-<td>視窗的高度 (不包括 chrome 瀏覽器/ 使用者操作介面部分 )</td>
-</tr>
-<tr>
-<td>window.innerWidth</td>
-<td>視窗的寬度 (不包括 chrome 瀏覽器/ 使用者操作介面部分 )</td>
-</tr>
-<tr>
-<td>window.outerHeight</td>
-<td>視窗的高度 (包括 chrome 瀏覽器/ 使用者操作介面部分 )</td>
-</tr>
-<tr>
-<td>window.innerWidth</td>
-<td>視窗的寬度 (包括 chrome 瀏覽器/ 使用者操作介面部分 )</td>
-</tr>
-<tr>
-<td>window.pageXOffset</td>
-<td>網頁文件水平捲動的距離 ( 和 window.scrollX  是一樣的，需跨瀏覽器時建議使用 pageXOffset)</td>
-</tr>
-<tr>
-<td>window.pageYOffset</td>
-<td>網頁文件垂直捲動的距離 ( 和 window.scrollY  是一樣的，需跨瀏覽器時建議使用 pageYOffset)</td>
-</tr>
-<tr>
-<td>window.screenX</td>
-<td>滑鼠的 X 座標，相對於螢幕的左上角</td>
-</tr>
-<tr>
-<td>window.screenY</td>
-<td>滑鼠的 Y 座標，相對於螢幕的左上角</td>
-</tr>
-<tr>
-<td>window.location</td>
-<td>window 物件目前的頁面 URL (或本機路徑)</td>
-</tr>
-<tr>
-<td>window.document</td>
-<td>參考至 document 物件，用以代表目前的頁面內容</td>
-</tr>
-<tr>
-<td>window.history</td>
-<td>參考至 history 物件，用以擷取瀏覽器視窗或頁籤所包含的瀏覽紀錄資訊</td>
-</tr>
-<tr>
-<td>window.history.length</td>
-<td>history 物件中的瀏覽紀錄筆數</td>
-</tr>
-<tr>
-<td>window.screen</td>
-<td>screen 物件</td>
-</tr>
-</tbody>
-</table>
-<h3 id="window-innerHeight-vs-window-outerHeight"><a href="#window-innerHeight-vs-window-outerHeight" class="headerlink" title="window.innerHeight vs window.outerHeight"></a>window.innerHeight vs window.outerHeight</h3><p><img src="https://developer.mozilla.org/@api/deki/files/213/=FirefoxInnerVsOuterHeight2.png" alt=""><br>圖片來源: <a href="https://developer.mozilla.org/en-US/docs/Web/API/Window/outerHeight" target="_blank" rel="noopener">https://developer.mozilla.org/en-US/docs/Web/API/Window/outerHeight</a></p>
-<h2 id="screen-物件"><a href="#screen-物件" class="headerlink" title="screen 物件"></a>screen 物件</h2><table>
-<thead>
-<tr>
-<th>特性</th>
-<th>說明</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>screen.width</td>
-<td>使用者的螢幕寬度</td>
-</tr>
-<tr>
-<td>screen.height</td>
-<td>使用者的螢幕高度</td>
-</tr>
-<tr>
-<td>screen.availWidth</td>
-<td>使用者的螢幕寬度剪掉系統的控制列</td>
-</tr>
-<tr>
-<td>screen.availHeight</td>
-<td>使用者的螢幕寬度剪掉系統的控制列</td>
-</tr>
-<tr>
-<td>screen.colorDepth</td>
-<td>the number of bits used to display one color</td>
-</tr>
-<tr>
-<td>screen.pixelDepth</td>
-<td>the pixel depth of the screen</td>
-</tr>
-</tbody>
-</table>
-<p>ps. For modern computers, Color Depth and Pixel Depth are equal.</p>
-<h2 id="Element-在頁面中的位置"><a href="#Element-在頁面中的位置" class="headerlink" title="Element 在頁面中的位置"></a>Element 在頁面中的位置</h2><table>
-<thead>
-<tr>
-<th>特性</th>
-<th>說明</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>HTMLElement.offsetParent</td>
-<td>回傳目前元件計算 offset 的祖先元件</td>
-</tr>
-<tr>
-<td>HTMLElement.offsetTop</td>
-<td>距離最近的祖先節點頂端的距離</td>
-</tr>
-<tr>
-<td>HTMLElement.offsetLeft</td>
-<td>距離最近的祖先節點左邊的距離</td>
-</tr>
-<tr>
-<td>HTMLElement.offsetHeight</td>
-<td>元素高度 (包括垂直 padding 和 border，若該元素有水平 scrollbar 也會算進去)</td>
-</tr>
-<tr>
-<td>HTMLElement.offsetWidth</td>
-<td>元素寬度 (包括垂直 padding 和 border，若該元素有垂直 scrollbar 也會算進去。)</td>
-</tr>
-<tr>
-<td>Element.clientHeight</td>
-<td>元素寬度，包括padding (不包括垂直 border 和 margin，若該元素有垂直 scrollbar 不會算進去。)</td>
-</tr>
-<tr>
-<td>Element.clientWidth</td>
-<td>元素寬度，包括padding (不包括水平 border 和 margin，若該元素有垂直 scrollbar 不會算進去。)</td>
-</tr>
-</tbody>
-</table>
-<ul>
-<li><p>offsetHeight &amp; offsetWidth<br>圖片來源: <a href="https://developer.mozilla.org/@api/deki/files/186/=Dimensions-offset.png" target="_blank" rel="noopener">https://developer.mozilla.org/@api/deki/files/186/=Dimensions-offset.png</a><br><img src="https://developer.mozilla.org/@api/deki/files/186/=Dimensions-offset.png" alt=""></p>
-</li>
-<li><p>clientHeight &amp; clientWidth<br>圖片來源: <a href="https://developer.mozilla.org/en-US/docs/Web/API/Element/clientWidth" target="_blank" rel="noopener">https://developer.mozilla.org/en-US/docs/Web/API/Element/clientWidth</a><br><img src="https://developer.mozilla.org/@api/deki/files/185/=Dimensions-client.png" alt=""></p>
-</li>
-</ul>
+        <p>接續上一篇的 iterator，來看看 generators 到底是什麼？</p>
+<h2 id="Generator-function-function"><a href="#Generator-function-function" class="headerlink" title="Generator function (function*)"></a>Generator function (function*)</h2><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span>* <span class="title">name</span>(<span class="params">[param[, param[, ... param]]]</span>) </span>&#123;</span><br><span class="line">   statements</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<a id="more"></a>
+<p>一個 generator 函示，使用 <code>function*</code> 作為宣告，會回傳一個 Generator 物件。</p>
+<blockquote>
+<p><code>generator</code> 可以被中斷跳出，等到再次呼叫的時候再繼續執行。</p>
+</blockquote>
+<p>呼叫 function* 並不會立刻執行函式內容，而是會回傳一個 iterator 物件。當執行 iterator 的 next 方法的時候，function* 裡面的 code 才會被執行，並停在第一個 yield expression 前。呼叫 next 並執行，會回傳一個物件，該物件會帶有一個 <code>value</code> 屬性，其值就是 yield 回傳的值，還會帶有一個 <code>done</code> 屬性，他的型態是 boolean。({value: val, done: true/false})。當該 yield expression 是最後一個的時候，<code>done</code> 屬性會是 true。</p>
+<p>generator 裡面的 yield expeession 不一定就直接回傳一個值。也可以再指向另一個 generator function。如下：<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span>* <span class="title">anotherGenerator</span>(<span class="params">i</span>) </span>&#123;</span><br><span class="line">  <span class="keyword">yield</span> i + <span class="number">1</span>;</span><br><span class="line">  <span class="keyword">yield</span> i + <span class="number">2</span>;</span><br><span class="line">  <span class="keyword">yield</span> i + <span class="number">3</span>;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">function</span>* <span class="title">generator</span>(<span class="params">i</span>) </span>&#123;</span><br><span class="line">  <span class="keyword">yield</span> i;</span><br><span class="line">  <span class="keyword">yield</span>* anotherGenerator(i);</span><br><span class="line">  <span class="keyword">yield</span> i + <span class="number">10</span>;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="keyword">var</span> gen = generator(<span class="number">10</span>);</span><br><span class="line"></span><br><span class="line"><span class="built_in">console</span>.log(gen.next().value); <span class="comment">// 10</span></span><br><span class="line"><span class="built_in">console</span>.log(gen.next().value); <span class="comment">// 11</span></span><br><span class="line"><span class="built_in">console</span>.log(gen.next().value); <span class="comment">// 12</span></span><br><span class="line"><span class="built_in">console</span>.log(gen.next().value); <span class="comment">// 13</span></span><br><span class="line"><span class="built_in">console</span>.log(gen.next().value); <span class="comment">// 20</span></span><br></pre></td></tr></table></figure></p>
+<p>generators 也可以帶入參數。如下面的範例：</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span>* <span class="title">logGenerator</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line">  <span class="built_in">console</span>.log(<span class="number">0</span>);</span><br><span class="line">  <span class="built_in">console</span>.log(<span class="number">1</span>, <span class="keyword">yield</span>);</span><br><span class="line">  <span class="built_in">console</span>.log(<span class="number">2</span>, <span class="keyword">yield</span>);</span><br><span class="line">  <span class="built_in">console</span>.log(<span class="number">3</span>, <span class="keyword">yield</span>);</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="keyword">var</span> gen = logGenerator();</span><br><span class="line"></span><br><span class="line"><span class="comment">// the first call of next executes from the start of the function</span></span><br><span class="line"><span class="comment">// until the first yield statement</span></span><br><span class="line">gen.next();             <span class="comment">// 0</span></span><br><span class="line">gen.next(<span class="string">'pretzel'</span>);    <span class="comment">// 1 pretzel</span></span><br><span class="line">gen.next(<span class="string">'california'</span>); <span class="comment">// 2 california</span></span><br><span class="line">gen.next(<span class="string">'mayonnaise'</span>); <span class="comment">// 3 mayonnaise</span></span><br></pre></td></tr></table></figure>
+<p>當 <code>function*</code> 裡面有 return，在執行到該行的時候該 <code>function*</code> 就會結束。即使後面還有其他的 yield expression，呼叫 next 也不會再繼續執行。<br>當 generator 執行完，會回傳 <code>{value: undefined, done: true}</code>。</p>
+<blockquote>
+<p>Generators 不能作為建構函式</p>
+</blockquote>
+<p>以下內容整理自這段影片 <a href="https://www.youtube.com/watch?v=QOnUcU8U_XE" target="_blank" rel="noopener">Generators in JavaScript</a></p>
+<h2 id="用-generator-來改寫-iterator"><a href="#用-generator-來改寫-iterator" class="headerlink" title="用 generator 來改寫 iterator"></a>用 generator 來改寫 iterator</h2><p>利用 generator 來改寫上一篇的範例中的 iterator。</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">const</span> dragonArmy = &#123;</span><br><span class="line">    [<span class="built_in">Symbol</span>.iterator] : <span class="function"><span class="keyword">function</span>*(<span class="params"></span>)</span>&#123;</span><br><span class="line">      <span class="keyword">while</span>(<span class="literal">true</span>)&#123;</span><br><span class="line">        <span class="keyword">const</span> enoughDragonSpawned = <span class="built_in">Math</span>.random() &gt; <span class="number">0.75</span>;</span><br><span class="line">        <span class="keyword">if</span>( enoughDrangonSpawned ) <span class="keyword">return</span> </span><br><span class="line">        <span class="keyword">yield</span> makeDragon()</span><br><span class="line">      &#125;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="comment">// 上一篇 iterator 的寫法</span></span><br><span class="line">    <span class="comment">// [Symbol.iterator]: () =&gt; &#123;</span></span><br><span class="line">    <span class="comment">//     return &#123;</span></span><br><span class="line">    <span class="comment">//         next: () =&gt; &#123;</span></span><br><span class="line">    <span class="comment">//             const enoughDragonSpawned = Math.random() &gt; 0.75;</span></span><br><span class="line">    <span class="comment">//             if(!enoughDragonSpawned)</span></span><br><span class="line">    <span class="comment">//                 return &#123;</span></span><br><span class="line">    <span class="comment">//                     value: makeDragon(),</span></span><br><span class="line">    <span class="comment">//                     done: false</span></span><br><span class="line">    <span class="comment">//                 &#125;</span></span><br><span class="line">    <span class="comment">//             return &#123;done: true&#125;</span></span><br><span class="line">    <span class="comment">//         &#125;</span></span><br><span class="line">    <span class="comment">//     &#125;</span></span><br><span class="line">    <span class="comment">// &#125;</span></span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="keyword">for</span> (<span class="keyword">const</span> dragon <span class="keyword">of</span> dragonArmy)&#123;</span><br><span class="line">    dragon <span class="comment">// </span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h3 id="generator-範例"><a href="#generator-範例" class="headerlink" title="generator 範例"></a>generator 範例</h3><p>宣告一個 someDragon 的 generator 函式來觀察 generator 的執行。<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line">funtion* someDragon()&#123;</span><br><span class="line">  <span class="keyword">while</span>(<span class="literal">true</span>)&#123;   <span class="comment">// it's always true</span></span><br><span class="line">    <span class="keyword">const</span> enoughDragonSpawned = <span class="built_in">Math</span>.random() &gt; <span class="number">0.75</span>;</span><br><span class="line">    <span class="keyword">if</span>( enoughDrangonSpawned ) <span class="keyword">return</span> </span><br><span class="line">    <span class="keyword">yield</span> makeDragon()</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="keyword">const</span> iterator = someDragons();</span><br><span class="line">iterator.next()  <span class="comment">// &#123; value: 'medium lightning dragon', done: false &#125;</span></span><br><span class="line">iterator.next()  <span class="comment">// &#123; value: 'tiny lightning dragon', done: false &#125;</span></span><br><span class="line">iterator.next()  <span class="comment">// &#123; value: 'big fire dragon', done: false &#125;</span></span><br><span class="line">iterator.next()  <span class="comment">// &#123; value: 'undefined', done: true &#125;</span></span><br><span class="line">iterator.next()  <span class="comment">// &#123; value: 'undefined', done: true &#125;</span></span><br><span class="line">iterator.next()  <span class="comment">// &#123; value: 'undefined', done: true &#125;</span></span><br></pre></td></tr></table></figure></p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line">funtion* someDragon()&#123;</span><br><span class="line">  <span class="keyword">yield</span> <span class="string">'fluffinkins some dragon'</span>;</span><br><span class="line">  <span class="keyword">yield</span> <span class="string">'make the fine dragon'</span>;</span><br><span class="line">  <span class="keyword">if</span>(<span class="built_in">Math</span>.random() &gt; <span class="number">0.5</span>) <span class="keyword">return</span>;   <span class="comment">// 當它 return的時候 done: true，後面的程式碼都不會被執行。</span></span><br><span class="line">  <span class="keyword">yield</span> <span class="string">'hardy the dog'</span>;</span><br><span class="line">  <span class="keyword">return</span> <span class="string">'hardy the dog!!'</span> <span class="comment">// 使用 return the next iteration will not happen</span></span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="keyword">const</span> iterator = someDragons();</span><br><span class="line">iterator.next()  <span class="comment">// &#123; value: 'medium lightning dragon', done: false &#125;</span></span><br><span class="line">iterator.next()  <span class="comment">// &#123; value: 'tiny lightning dragon', done: false &#125;</span></span><br><span class="line">iterator.next()  <span class="comment">// &#123; value: 'big fire dragon', done: false &#125;</span></span><br><span class="line">iterator.next()  <span class="comment">// &#123; value: 'undefined', done: true &#125;</span></span><br><span class="line">iterator.next()  <span class="comment">// &#123; value: 'undefined', done: true &#125;</span></span><br><span class="line">iterator.next()  <span class="comment">// &#123; value: 'undefined', done: true &#125;</span></span><br></pre></td></tr></table></figure>
+<p>再重複一次</p>
+<blockquote>
+<p>Calling a generator function does NOT run it …yet!</p>
+</blockquote>
+<p>iterators 跟 generator 的關係，可以想成電視和遙控器的關係。<br>iterators 就像是遙控器，透過 next() 來操縱 generator 的執行。</p>
+<p>影片的總結說到，</p>
+<blockquote>
+<p>It’s just a SYNTX SUGAR to help create iterator.<br>generator 就是一個語法糖，可以更容易的建立 iterator。</p>
+</blockquote>
+<h3 id="不使用-generator-來重寫-someDragon-函式"><a href="#不使用-generator-來重寫-someDragon-函式" class="headerlink" title="不使用 generator 來重寫 someDragon 函式"></a>不使用 generator 來重寫 someDragon 函式</h3><p>透過下面的重寫，可以更清楚看出來整個流程，也可以比較出為什麼主持人會說 generator 是語法糖。<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">someDragons</span>(<span class="params"></span>)</span>&#123;</span><br><span class="line">    <span class="keyword">let</span> iterations = <span class="number">-1</span>;</span><br><span class="line">    <span class="keyword">const</span> iterator = &#123;</span><br><span class="line">        next: <span class="function"><span class="params">()</span> =&gt;</span> &#123;</span><br><span class="line">            iterations ++ </span><br><span class="line">            <span class="keyword">if</span>(iterations === <span class="number">0</span>)</span><br><span class="line">                <span class="keyword">return</span> &#123; <span class="attr">value</span>: <span class="string">'fluffykins dragon'</span>, <span class="attr">done</span>: <span class="literal">false</span> &#125;;</span><br><span class="line">            <span class="keyword">if</span>(iterations === <span class="number">1</span>)</span><br><span class="line">                <span class="keyword">return</span> &#123; <span class="attr">value</span>: <span class="string">'mark the fine dragon'</span>, <span class="attr">done</span>: <span class="literal">false</span> &#125;;</span><br><span class="line">            <span class="keyword">if</span>(iterations === <span class="number">2</span>)&#123;</span><br><span class="line">                <span class="keyword">if</span> (<span class="built_in">Math</span>.random &gt; <span class="number">0.5</span>)&#123;</span><br><span class="line">                    <span class="keyword">return</span> &#123;<span class="attr">value</span>: <span class="string">'hardy the dog'</span>, <span class="attr">done</span>: <span class="literal">true</span>&#125;</span><br><span class="line">                &#125;</span><br><span class="line">            &#125;</span><br><span class="line">            <span class="keyword">return</span> &#123;<span class="attr">done</span>: <span class="literal">true</span>&#125;;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">return</span> iterator</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="keyword">const</span> iterator = someDragons();</span><br><span class="line"><span class="built_in">console</span>.log(iterator.next())  <span class="comment">// &#123;value: 'fluffykins dragon', done: false &#125;</span></span><br><span class="line"><span class="built_in">console</span>.log(iterator.next()) <span class="comment">// &#123;value: 'mark the fine dragon', done: false &#125;</span></span><br><span class="line"><span class="built_in">console</span>.log(iterator.next()) <span class="comment">// &#123; done: false &#125;</span></span><br></pre></td></tr></table></figure></p>
+<h2 id="小結"><a href="#小結" class="headerlink" title="小結"></a>小結</h2><p>本篇主要是延續上一篇有關 iterators 來介紹 generators，至於有關 async 是怎麼建立在 generators 上，async, await f又是怎麼一回事就等之後再來繼續研究。</p>
 <h2 id="參考資料"><a href="#參考資料" class="headerlink" title="參考資料"></a>參考資料</h2><ul>
-<li>Javascript &amp; JQuery 網站互動設計程式進化之道</li>
-<li><a href="https://www.w3schools.com/js/js_window_screen.asp" target="_blank" rel="noopener">JavaScript Window Screen</a> </li>
-<li><a href="https://developer.mozilla.org/en-US/docs/Web/API/Window/outerHeight" target="_blank" rel="noopener">Window.outerHeight</a></li>
+<li><a href="https://www.youtube.com/watch?v=QOnUcU8U_XE" target="_blank" rel="noopener">Generators in JavaScript</a></li>
+<li><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Statements/function*" target="_blank" rel="noopener">function* MDN</a></li>
 </ul>
 
       
@@ -581,8 +464,8 @@
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/2018/04/12/different-for-loop/" rel="next" title="foreach, for...of, and for...in">
-                <i class="fa fa-chevron-left"></i> foreach, for...of, and for...in
+              <a href="/2018/04/23/iterator/" rel="next" title="Iterators">
+                <i class="fa fa-chevron-left"></i> Iterators
               </a>
             
           </div>
@@ -590,10 +473,6 @@
           <span class="post-nav-divider"></span>
 
           <div class="post-nav-prev post-nav-item">
-            
-              <a href="/2018/04/19/destructuring/" rel="prev" title="Destructuring 的用法">
-                Destructuring 的用法 <i class="fa fa-chevron-right"></i>
-              </a>
             
           </div>
         </div>
@@ -757,7 +636,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#window-物件"><span class="nav-number">1.</span> <span class="nav-text">window 物件</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#window-innerHeight-vs-window-outerHeight"><span class="nav-number">1.1.</span> <span class="nav-text">window.innerHeight vs window.outerHeight</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#screen-物件"><span class="nav-number">2.</span> <span class="nav-text">screen 物件</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Element-在頁面中的位置"><span class="nav-number">3.</span> <span class="nav-text">Element 在頁面中的位置</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#參考資料"><span class="nav-number">4.</span> <span class="nav-text">參考資料</span></a></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#Generator-function-function"><span class="nav-number">1.</span> <span class="nav-text">Generator function (function*)</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#用-generator-來改寫-iterator"><span class="nav-number">2.</span> <span class="nav-text">用 generator 來改寫 iterator</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#generator-範例"><span class="nav-number">2.1.</span> <span class="nav-text">generator 範例</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#不使用-generator-來重寫-someDragon-函式"><span class="nav-number">2.2.</span> <span class="nav-text">不使用 generator 來重寫 someDragon 函式</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#小結"><span class="nav-number">3.</span> <span class="nav-text">小結</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#參考資料"><span class="nav-number">4.</span> <span class="nav-text">參考資料</span></a></li></ol></div>
             
 
           </div>
@@ -947,9 +826,9 @@
     
       <script type="text/javascript">
         var disqus_config = function () {
-          this.page.url = 'http://yoursite.com/2018/04/15/window-obj/';
-          this.page.identifier = '2018/04/15/window-obj/';
-          this.page.title = 'Window 物件和 Element 相關定位';
+          this.page.url = 'http://yoursite.com/2018/05/02/generators/';
+          this.page.identifier = '2018/05/02/generators/';
+          this.page.title = 'generators';
         };
         var d = document, s = d.createElement('script');
         s.src = 'https://haha.disqus.com/embed.js';
