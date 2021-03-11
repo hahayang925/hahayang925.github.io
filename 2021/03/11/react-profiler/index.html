@@ -66,7 +66,7 @@
 
 
 
-  <meta name="keywords" content="Hexo, NexT">
+  <meta name="keywords" content="javascript,react,">
 
 
 
@@ -77,17 +77,28 @@
 
 
 
-<meta name="description" content="Life is but a span">
-<meta property="og:type" content="website">
-<meta property="og:title" content="Categories">
-<meta property="og:url" content="http://yoursite.com/categories/index.html">
+<meta name="description" content="前言去年開始用 React 開發，對於效能上跟畫面 render 的速度其實一直沒有搞得很清楚，也不知道該如何去觀察，最近因為專案的開發，面對巨量的資料，發生了效能的問題，發現有這個工具可以來監測究竟頁面上每個 component 的 render 花了多少時間。整理一下從 React 官網對於 React Profiler 的說明跟用法。官網的頁面跟現行的相比在圖片顯示上有點不一樣，不過大致上都">
+<meta name="keywords" content="javascript,react">
+<meta property="og:type" content="article">
+<meta property="og:title" content="React profiler usage">
+<meta property="og:url" content="http://yoursite.com/2021/03/11/react-profiler/index.html">
 <meta property="og:site_name" content="to be continued...">
-<meta property="og:description" content="Life is but a span">
+<meta property="og:description" content="前言去年開始用 React 開發，對於效能上跟畫面 render 的速度其實一直沒有搞得很清楚，也不知道該如何去觀察，最近因為專案的開發，面對巨量的資料，發生了效能的問題，發現有這個工具可以來監測究竟頁面上每個 component 的 render 花了多少時間。整理一下從 React 官網對於 React Profiler 的說明跟用法。官網的頁面跟現行的相比在圖片顯示上有點不一樣，不過大致上都">
 <meta property="og:locale" content="zh-tw">
-<meta property="og:updated_time" content="2018-03-29T02:48:26.684Z">
+<meta property="og:image" content="https://i.imgur.com/FGPtjtf.png">
+<meta property="og:image" content="https://zh-hant.reactjs.org/static/bae8d10e17f06eeb8c512c91c0153cff/ad997/start-profiling.png">
+<meta property="og:image" content="https://zh-hant.reactjs.org/static/45619de03bed468869f7a0878f220586/ad997/stop-profiling.png">
+<meta property="og:image" content="https://zh-hant.reactjs.org/static/bd72dec045515d59be51c944e902d263/d8f62/commit-selector.png">
+<meta property="og:image" content="https://zh-hant.reactjs.org/683b9d860ef722e1505e5e629df7ef7e/filtering-commits.gif">
+<meta property="og:image" content="https://zh-hant.reactjs.org/39ba82394205242af7c37ccb3a631f4d/zoom-in-and-out.gif">
+<meta property="og:image" content="https://zh-hant.reactjs.org/static/0c81347535e28c9cdef0e94fab887b89/ad997/ranked-chart.png">
+<meta property="og:image" content="https://zh-hant.reactjs.org/99cb4321ded8eb0c21ae5fc673878563/see-all-commits-for-a-fiber.gif">
+<meta property="og:image" content="https://zh-hant.reactjs.org/7c66e7686b5242473c87b3d0b4576cf3/navigate-between-interactions-and-commits.gif">
+<meta property="og:updated_time" content="2021-03-11T14:35:11.361Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="Categories">
-<meta name="twitter:description" content="Life is but a span">
+<meta name="twitter:title" content="React profiler usage">
+<meta name="twitter:description" content="前言去年開始用 React 開發，對於效能上跟畫面 render 的速度其實一直沒有搞得很清楚，也不知道該如何去觀察，最近因為專案的開發，面對巨量的資料，發生了效能的問題，發現有這個工具可以來監測究竟頁面上每個 component 的 render 花了多少時間。整理一下從 React 官網對於 React Profiler 的說明跟用法。官網的頁面跟現行的相比在圖片顯示上有點不一樣，不過大致上都">
+<meta name="twitter:image" content="https://i.imgur.com/FGPtjtf.png">
 
 
 
@@ -117,13 +128,13 @@
 
 
 
-  <link rel="canonical" href="http://yoursite.com/categories/">
+  <link rel="canonical" href="http://yoursite.com/2021/03/11/react-profiler/">
 
 
 
 
 
-  <title>Categories | to be continued...</title>
+  <title>React profiler usage | to be continued...</title>
   
 
 
@@ -279,40 +290,211 @@
 
   <div id="posts" class="posts-expand">
     
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2021/03/11/react-profiler/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="HAHA YANG">
+      <meta itemprop="description" content>
+      <meta itemprop="image" content="/images/avatar.gif">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="to be continued...">
+    </span>
+
     
-    
-    <div class="post-block page">
       <header class="post-header">
 
-	<h1 class="post-title" itemprop="name headline">Categories</h1>
-
-
-
-</header>
-
-      
-      
-      
-      <div class="post-body">
         
         
-          <div class="category-all-page">
-            <div class="category-all-title">
-                目前共計 5 個分類
-            </div>
-            <div class="category-all">
-              <ul class="category-list"><li class="category-list-item"><a class="category-list-link" href="/categories/ES6/">ES6</a><span class="category-list-count">2</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/Javascript/">Javascript</a><span class="category-list-count">7</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/javascript/">javascript</a><span class="category-list-count">1</span></li></ul>
-            </div>
-          </div>
+          <h1 class="post-title" itemprop="name headline">React profiler usage</h1>
         
-      </div>
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">發表於</span>
+              
+              <time title="創建於" itemprop="dateCreated datePublished" datetime="2021-03-11T22:29:57+08:00">
+                2021-03-11
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+            <span class="post-category">
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分類於</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/Javascript/" itemprop="url" rel="index">
+                    <span itemprop="name">Javascript</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+              <span class="post-comments-count">
+                <span class="post-meta-divider">|</span>
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-comment-o"></i>
+                </span>
+                <a href="/2021/03/11/react-profiler/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count disqus-comment-count" data-disqus-identifier="2021/03/11/react-profiler/" itemprop="commentCount"></span>
+                </a>
+              </span>
+            
+          
+
+          
+          
+
+          
+            <span class="post-meta-divider">|</span>
+            <span class="page-pv"><i class="fa fa-file-o"></i>
+            <span class="busuanzi-value" id="busuanzi_value_page_pv"></span>
+            </span>
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
       
       
+
+      
+        <h2 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h2><p>去年開始用 React 開發，對於效能上跟畫面 render 的速度其實一直沒有搞得很清楚，也不知道該如何去觀察，最近因為專案的開發，面對巨量的資料，發生了效能的問題，發現有這個工具可以來監測究竟頁面上每個 component 的 render 花了多少時間。<br>整理一下從 React 官網對於 <a href="https://zh-hant.reactjs.org/blog/2018/09/10/introducing-the-react-profiler.html" target="_blank" rel="noopener">React Profiler</a> 的說明跟用法。<br>官網的頁面跟現行的相比在圖片顯示上有點不一樣，不過大致上都還是差不多的。</p>
+<h2 id="安裝"><a href="#安裝" class="headerlink" title="安裝"></a>安裝</h2><p>前往 google chrome extension 商店，搜尋並安裝 React Developer Tools。在 dev 環境下打開開發者工具就可以看到多了<br><img src="https://i.imgur.com/FGPtjtf.png" alt></p>
+<h2 id="使用-React-Profiler"><a href="#使用-React-Profiler" class="headerlink" title="使用 React Profiler"></a>使用 React Profiler</h2><ol>
+<li><p>打開 devtool 下的 Profiler，點擊開始錄製的按鈕，就可以開始錄製。一但開始錄製後，它會自動記錄每次頁面渲染時的效能相關資訊。<br><img src="https://zh-hant.reactjs.org/static/bae8d10e17f06eeb8c512c91c0153cff/ad997/start-profiling.png" alt></p>
+</li>
+<li><p>正常操作你想要偵測的畫面操作，都操作完之後，點擊停止錄製，開發者工具就會顯示各種效能相關數據供你查看。<br><img src="https://zh-hant.reactjs.org/static/45619de03bed468869f7a0878f220586/ad997/stop-profiling.png" alt></p>
+</li>
+</ol>
+<h2 id="如何看-profiler-的數據"><a href="#如何看-profiler-的數據" class="headerlink" title="如何看 profiler 的數據"></a>如何看 profiler 的數據</h2><h3 id="React-的兩種工作模式"><a href="#React-的兩種工作模式" class="headerlink" title="React 的兩種工作模式"></a>React 的兩種工作模式</h3><ul>
+<li>render phase: 決定該 component 是不是有需要重新渲染<ul>
+<li>Determines what changes need to be made to e.g. the DOM.</li>
+<li>React calls render and then compares the result to the previous render</li>
+</ul>
+</li>
+<li>commit phase: 如果有任何改變，React 會呼叫並執行 LifeCycle<ul>
+<li>when React applies any changes. (In the case of React DOM, this is when React inserts, updates, and removes DOM nodes.) React also calls lifecycles like componentDidMount and componentDidUpdate during this phase</li>
+</ul>
+</li>
+</ul>
+<p>Profiler 將 perfomance 的資料用 commit 做分類。顯示在下圖紅匡處<br><img src="https://zh-hant.reactjs.org/static/bd72dec045515d59be51c944e902d263/d8f62/commit-selector.png" alt><br>每個柱狀圖都代表一個 commit，當下檢視的 commit 會是黑色，可以透過選取每個柱狀圖示來檢視不同的 commit 的 performance 資料。<br>越長的柱狀代表該 commit 花了較多的時間去 render。</p>
+<h3 id="篩選-commits"><a href="#篩選-commits" class="headerlink" title="篩選 commits"></a>篩選 commits</h3><p>當錄製的時間很長，捕捉到的 commits 數量會很多，會比較難快速查看哪些 commit 花了較多的時間去 render。這個時候就可以用 filter 的功能，點擊齒輪，輸入想要查看大概超過多少時間 render 的 commits。<br><img src="https://zh-hant.reactjs.org/683b9d860ef722e1505e5e629df7ef7e/filtering-commits.gif" alt></p>
+<h3 id="Flame-chart"><a href="#Flame-chart" class="headerlink" title="Flame chart"></a>Flame chart</h3><p>Flame chart 顯示單一 commit 下 app 的狀態。每個區塊代表一個 React component(e.g. App, Nav)。bar 的寬度代表每次 component render 所花費的時間，顏色代表該次 commit 中它花了多少時間。<br><img src="https://zh-hant.reactjs.org/39ba82394205242af7c37ccb3a631f4d/zoom-in-and-out.gif" alt></p>
+<blockquote>
+<p>Bar 的寬度代表 component 和他的 children 最近一次花了多少時間 render。如果該 component 在該次 commit 沒有重新 render，那上面顯示的時間就是前一次 render 所花費的時間。寬度愈寬代表花費得時間愈多。<br>花費的時間: 黃色 &gt; 藍色 &gt; 灰色(代表在這次 commit 完全沒有 render)</p>
+</blockquote>
+<p>點擊每一個 component 的區塊，可以看到他跟他的 children render 的相關時間，右邊會顯示選擇的 component 在該次 commit 的 props 及 state 的狀態。透過在不同的 commit 間切換，可以觀察到 component 是什麼的改變觸發了 render。</p>
+<h3 id="Ranked-chart"><a href="#Ranked-chart" class="headerlink" title="Ranked chart"></a>Ranked chart</h3><p>可以一目瞭然，該次 commit 每個 component 所花費的時間，由大至小的排列。<br><img src="https://zh-hant.reactjs.org/static/0c81347535e28c9cdef0e94fab887b89/ad997/ranked-chart.png" alt><br><strong><em>單一 component 的 render 時間包含了他的 children，所以愈高階層的 component 通常會花最久的時間 render</em></strong></p>
+<h3 id="Component-chart"><a href="#Component-chart" class="headerlink" title="Component chart"></a>Component chart</h3><p>透過 component chart 可以追蹤特定 component 在該次錄製中總共 render 了幾次及它花費的時間。<br>double-click 單一 component 或是點擊右邊的長條圖 icon 就可以進入 component chart。點擊 component chart 的任一條，就可以回到該次 commit 的 Flame chart。<br><img src="https://zh-hant.reactjs.org/99cb4321ded8eb0c21ae5fc673878563/see-all-commits-for-a-fiber.gif" alt></p>
+<h3 id="Interactions"><a href="#Interactions" class="headerlink" title="Interactions"></a>Interactions</h3><p>記錄在錄製期間的每次 interaction。綠色的點點代表和每次 interaction 相關的 commit。<br><img src="https://zh-hant.reactjs.org/7c66e7686b5242473c87b3d0b4576cf3/navigate-between-interactions-and-commits.gif" alt></p>
+
       
     </div>
     
     
     
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+        <div class="post-tags">
+          
+            <a href="/tags/javascript/" rel="tag"><i class="fa fa-tag"></i> javascript</a>
+          
+            <a href="/tags/react/" rel="tag"><i class="fa fa-tag"></i> react</a>
+          
+        </div>
+      
+
+      
+      
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/2018/05/22/environment-setting/" rel="next" title="前端開發環境建立">
+                <i class="fa fa-chevron-left"></i> 前端開發環境建立
+              </a>
+            
+          </div>
+
+          <span class="post-nav-divider"></span>
+
+          <div class="post-nav-prev post-nav-item">
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+
+    <div class="post-spread">
+      
+    </div>
   </div>
 
 
@@ -321,6 +503,20 @@
 
 
           
+
+  
+    <div class="comments" id="comments">
+      <div id="disqus_thread">
+        <noscript>
+          Please enable JavaScript to view the
+          <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a>
+        </noscript>
+      </div>
+    </div>
+
+  
+
+
 
         </div>
         
@@ -341,8 +537,17 @@
       
 
       
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
+            文章目錄
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview-wrap">
+            本站概覽
+          </li>
+        </ul>
+      
 
-      <section class="site-overview-wrap sidebar-panel sidebar-panel-active">
+      <section class="site-overview-wrap sidebar-panel">
         <div class="site-overview">
           <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
             
@@ -424,6 +629,22 @@
         </div>
       </section>
 
+      
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#前言"><span class="nav-number">1.</span> <span class="nav-text">前言</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#安裝"><span class="nav-number">2.</span> <span class="nav-text">安裝</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#使用-React-Profiler"><span class="nav-number">3.</span> <span class="nav-text">使用 React Profiler</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#如何看-profiler-的數據"><span class="nav-number">4.</span> <span class="nav-text">如何看 profiler 的數據</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#React-的兩種工作模式"><span class="nav-number">4.1.</span> <span class="nav-text">React 的兩種工作模式</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#篩選-commits"><span class="nav-number">4.2.</span> <span class="nav-text">篩選 commits</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Flame-chart"><span class="nav-number">4.3.</span> <span class="nav-text">Flame chart</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Ranked-chart"><span class="nav-number">4.4.</span> <span class="nav-text">Ranked chart</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Component-chart"><span class="nav-number">4.5.</span> <span class="nav-text">Component chart</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Interactions"><span class="nav-number">4.6.</span> <span class="nav-text">Interactions</span></a></li></ol></li></ol></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
       
 
       
@@ -605,6 +826,18 @@
       <script id="dsq-count-scr" src="https://haha.disqus.com/count.js" async></script>
     
 
+    
+      <script type="text/javascript">
+        var disqus_config = function () {
+          this.page.url = 'http://yoursite.com/2021/03/11/react-profiler/';
+          this.page.identifier = '2021/03/11/react-profiler/';
+          this.page.title = 'React profiler usage';
+        };
+        var d = document, s = d.createElement('script');
+        s.src = 'https://haha.disqus.com/embed.js';
+        s.setAttribute('data-timestamp', '' + +new Date());
+        (d.head || d.body).appendChild(s);
+      </script>
     
 
   
